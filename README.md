@@ -1,4 +1,4 @@
-# [docker-clikit](https://github.com/GabriOliv/docker-clikit)
+# [CLI-Kit](https://github.com/GabriOliv/docker-clikit)
 
 #### Kit with CLI Apps for Docker.
 
