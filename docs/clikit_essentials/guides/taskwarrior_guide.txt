@@ -1,0 +1,61 @@
+[36m[1m
+ _____         _     __        __              _            
+|_   _|_ _ ___| | __ \ \      / /_ _ _ __ _ __(_) ___  _ __ 
+  | |/ _` / __| |/ /  \ \ /\ / / _` | '__| '__| |/ _ \| '__|
+  | | (_| \__ \   <    \ V  V / (_| | |  | |  | | (_) | |   
+  |_|\__,_|___/_|\_\    \_/\_/ \__,_|_|  |_|  |_|\___/|_|   
+  ____                                          _     
+ / ___|___  _ __ ___  _ __ ___   __ _ _ __   __| |___ 
+| |   / _ \| '_ ` _ \| '_ ` _ \ / _` | '_ \ / _` / __|
+| |__| (_) | | | | | | | | | | | (_| | | | | (_| \__ \
+ \____\___/|_| |_| |_|_| |_| |_|\__,_|_| |_|\__,_|___/
+[0m
+
+[36m[1m Return Config File[0m
+[35m cat ~/.taskrc[0m
+
+[36m[1m Create new Task inside a Project[0m
+[35m task add project:need [aTASKNAME]otherTASKNAME[0m
+
+[36m[1m Delete Task[0m
+[35m task delete ID[0m
+
+[36m[1m List Color System[0m
+[35m task colors[0m
+
+[36m[1m Add Color to Project NAME[0m
+[35m task config color.project.NAME 'rgb204'[0m
+
+[36m[1m List each Color[0m
+[35m task color legend[0m
+
+[36m[1m List Calendar[0m
+[35m task calendar[0m
+
+[36m[1m Filtered Project Summary[0m
+[35m task summary[0m
+
+[36m[1m Return Burndown Chart, by Week[0m
+[35m task burndown[0m
+
+[36m[1m Return History by Month[0m
+[35m task history[0m
+
+[36m[1m Return History Graph[0m
+[35m task ghistory[0m
+
+[36m[1m Modify Date of Task[0m
+[35m task modify ID due:2020-12-30[0m
+
+[36m[1m Rename Task[0m
+[35m task ID modify [newTASKNAME]othernewTASKNAME[0m
+
+[36m[1m Complete a Task[0m
+[35m task ID done[0m
+
+[36m[1m List Completed Tasks[0m
+[35m task completed[0m
+
+[36m[1m List of Configuration Settings[0m
+[35m task show[0m
+
