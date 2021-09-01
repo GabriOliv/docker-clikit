@@ -1,6 +1,6 @@
 # [CLI-Kit](https://github.com/GabriOliv/docker-clikit)
 
-#### Kit with CLI Apps for Docker.
+Kit with CLI Apps for Docker.
 
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://github.com/GabriOliv/docker-clikit)
 
@@ -40,10 +40,3 @@
     - pipes.sh — [source](https://github.com/pipeseroni/pipes.sh)
 
 ---
-
-- [ ] How to Run, Exec, Exit, Delete...
-- [x] Custom Guide
-- [ ] Docker Hub Image
-
----
-
