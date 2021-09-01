@@ -42,7 +42,7 @@
 ---
 
 - [ ] How to Run, Exec, Exit, Delete...
-- [ ] Custom Guide
+- [x] Custom Guide
 - [ ] Docker Hub Image
 
 ---
