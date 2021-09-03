@@ -1,3 +1,10 @@
+
+<p align="center">
+    <img src="images/clikit_neofetch.svg" alt="CLI Kit"><br>
+</p>
+
+---
+
 # [CLI-Kit](https://github.com/GabriOliv/docker-clikit)
 
 Kit with CLI Apps for Docker.
