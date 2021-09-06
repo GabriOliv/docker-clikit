@@ -47,3 +47,21 @@ Kit with CLI Apps for Docker.
     - pipes.sh — [source](https://github.com/pipeseroni/pipes.sh)
 
 ---
+
+# Install
+
+* Dependencies:
+    * [Docker](https://docs.docker.com/)
+
+* Build Image from Dockerfile
+    ```sh
+    git clone https://github.com/GabriOliv/docker-clikit.git
+    docker build docker-clikit -t clikit
+    ```
+
+* Run Container from Image
+    ```sh
+    sudo docker run -it --rm clikit
+    ```
+
+---
