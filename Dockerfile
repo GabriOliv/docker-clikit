@@ -6,11 +6,8 @@ ENV TZ UTC
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
-
-# Install APT Apps
-RUN apt-get clean && \
-	rm -rf /var/lib/apt/lists/* && \
-	apt-get update -qq && apt-get install -qqy \
+# Install apt apps
+RUN apt-get update -qq && apt-get install -qqy \
 		bat \
 		calcurse \
 		cmus \
@@ -20,6 +17,7 @@ RUN apt-get clean && \
 		glances \
 		hollywood \
 		make \
+		micro \
 		neofetch \
 		nload \
 		nmon \
@@ -32,13 +30,13 @@ RUN apt-get clean && \
 	dpkg-reconfigure tzdata && \
 	updatedb
 
-# Install GIT Apps
+# Install git apps
 RUN git clone https://github.com/pipeseroni/pipes.sh.git && \
 	make install -C pipes.sh/ && \
 	rm -rf pipes.sh/
 
-# Copy Scripts and Guides
-COPY docs/clikit_essentials /etc/
+# Copy scripts
+COPY docs/scripts/ /etc/clikit
 
-# Copy Bashrc Alias and PS1 changes
+# Copy bashrc
 COPY docs/.bashrc /root/

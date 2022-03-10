@@ -1,9 +1,8 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
 [ -z "$PS1" ] && return
 HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=500
+HISTFILESIZE=500
 shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
@@ -24,11 +23,10 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1='\[\e[1m\][\[\e[1;38;5;39m\]\u\[\e[m\]\[\e[1m\]][\[\e[1;32m\]\A\[\e[m\]\[\e[1m\]]:\[\e[m\]\w\[\e[1m\]\$\[\e[m\]'
-
+    PS1='\[\e[1m\][\[\e[1;38;5;39m\]\u\[\e[m\]\[\e[1m\]][\[\e[1;32m\]\A\[\e[m\]\[\e[1m\]]\[\e[1;31m\]$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\[\e[m\]\[\e[1m\]:\[\e[m\]\w\[\e[1m\]\$\[\e[m\]'
 else
     # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1='\[\e[1m\][\[\e[1;38;5;39m\]\u\[\e[m\]\[\e[1m\]][\[\e[1;32m\]\A\[\e[m\]\[\e[1m\]]:\[\e[m\]\w\[\e[1m\]\$\[\e[m\]'
+    PS1='\[\e[1m\][\[\e[1;38;5;39m\]\u\[\e[m\]\[\e[1m\]][\[\e[1;32m\]\A\[\e[m\]\[\e[1m\]]\[\e[1;31m\]$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\[\e[m\]\[\e[1m\]:\[\e[m\]\w\[\e[1m\]\$\[\e[m\]'
 fi
 unset color_prompt force_color_prompt
 
@@ -55,10 +53,18 @@ alias l='ls -CF'
 
 alias bat='batcat'
 alias clock-figlet='while true; do clear; echo "$(date '+%T' | figlet -ct)"; echo "[Ctrl+C] to EXIT"; sleep 1; done'
-alias dockerfetch='neofetch --ascii /etc/guides/docker_logo.txt  --ascii_colors 12 15 14 --colors 4 14 12 6 15 8'
-alias histcat='history|grep'
-alias guide='python3 /etc/guides/guide.py'
-alias taskhelp='cat /etc/guides/taskwarrior_guide.txt'
+alias ghistory='history|grep'
+alias heat='while true; do clear; sensors; echo -ne "\n\n[Ctrl+C] to EXIT"; sleep 0.5; done'
+alias taskhelp='cat /etc/clikit/taskwarrior_guide.txt'
+
+alias dockerfetch='neofetch --ascii /etc/clikit/docker_logo.txt  --ascii_colors 12 15 14 --colors 4 14 12 6 15 8'
+alias guide='python3 /etc/clikit/guide.py'
+
+alias gitlog='git log --color=always | less -r'
+alias gitlast='git ls-tree --full-tree -r --name-only HEAD | less'
+alias gitkeys='cat ~/.ssh/id_rsa.pub | less'
+
+alias pyserver='python3 -m http.server'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
